@@ -1,0 +1,11 @@
+version: '3.8'
+
+volumes:
+  test:
+    name: test
+  research-data:
+    name: research-data
+  uploads:
+    name: research_uploads
+  storage-uploads:
+    name: research_storage-uploads
