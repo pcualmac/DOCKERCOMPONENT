@@ -1,13 +1,6 @@
 version: '3.8'
 
 networks:
-  openvpn:
-    name: openvpn
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 192.168.192.0/20
-          gateway: 192.168.192.1
-  research_network:
-    name: research_network
   laravel-apikey:
+  laravel-apione:
+  laravel-apitwo:
