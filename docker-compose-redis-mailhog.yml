@@ -1,0 +1,27 @@
+version: "3.2"
+
+include:
+  - path:
+    - ./docker-compose-net.yml
+    - ./docker-compose-volume.yml
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis_laravel_enviroment
+    restart: unless-stopped
+    ports:
+      - 6379:6379
+    command: redis-server --appendonly yes --replica-read-only no
+    networks:
+      - redis-mailhog
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: mailhog_laravel_enviroment
+    restart: unless-stopped
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - redis-mailhog
