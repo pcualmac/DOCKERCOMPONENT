@@ -6,3 +6,5 @@ networks:
   laravel-apitwo:
   db-networks:
     external: true
+  redis-mailhog:
+    external: true
